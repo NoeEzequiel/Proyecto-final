@@ -6,7 +6,6 @@ package Inicio;
 
 import java.awt.*;
 
-
 /**
  *
  * @author Manuel Guererro Morales
@@ -19,8 +18,8 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         initComponents();
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/main/resources/Imagenes/veterinario.png"));
-                Imagenes.imagenEscalada("FondoInicio.png", Fondo);
-               this.setCursor(Imagenes.Cursor("cursorClick.png"));
+        Imagenes.imagenEscalada("FondoInicio.png", Fondo);
+        this.setCursor(Imagenes.Cursor("cursorClick.png"));
 
     }
 
@@ -36,7 +35,8 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Entrar = new javax.swing.JButton();
-        Entrar1 = new javax.swing.JButton();
+        Creditos = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,19 +63,35 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        Entrar1.setBackground(new java.awt.Color(0, 153, 204));
-        Entrar1.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
-        Entrar1.setForeground(new java.awt.Color(255, 255, 255));
-        Entrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pata.png"))); // NOI18N
-        Entrar1.setText("Entrar");
-        Entrar1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Bienvenido", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
-        Entrar1.setCursor(Imagenes.Cursor("cursorAcercar.png"));
-        Entrar1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Creditos.setBackground(new java.awt.Color(0, 153, 204));
+        Creditos.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
+        Creditos.setForeground(new java.awt.Color(255, 255, 255));
+        Creditos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pata.png"))); // NOI18N
+        Creditos.setText("Creditos");
+        Creditos.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Bienvenido", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        Creditos.setCursor(Imagenes.Cursor("cursorAcercar.png"));
+        Creditos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Entrar1MouseEntered(evt);
+                CreditosMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                Entrar1MouseExited(evt);
+                CreditosMouseExited(evt);
+            }
+        });
+
+        Salir.setBackground(new java.awt.Color(0, 153, 204));
+        Salir.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
+        Salir.setForeground(new java.awt.Color(255, 255, 255));
+        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pata.png"))); // NOI18N
+        Salir.setText("Salir");
+        Salir.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Bienvenido", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        Salir.setCursor(Imagenes.Cursor("cursorAcercar.png"));
+        Salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SalirMouseExited(evt);
             }
         });
 
@@ -87,13 +103,16 @@ public class Inicio extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(126, 126, 126)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(Entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Entrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)
+                        .addComponent(Creditos, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,35 +122,48 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(101, 101, 101)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Entrar)
-                    .addComponent(Entrar1))
-                .addContainerGap(71, Short.MAX_VALUE))
+                    .addComponent(Creditos)
+                    .addComponent(Salir))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 350));
 
         Fondo.setOpaque(true);
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 478, 349));
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 349));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void EntrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarMouseEntered
-      Entrar.setBackground(Color.white);
-      Entrar.setForeground(Color.black);
+        Entrar.setBackground(Color.white);
+        Entrar.setForeground(Color.black);
     }//GEN-LAST:event_EntrarMouseEntered
 
     private void EntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarMouseExited
-       Entrar.setBackground(new Color(0,153,204));
-      Entrar.setForeground(Color.white);
+        Entrar.setBackground(new Color(0, 153, 204));
+        Entrar.setForeground(Color.white);
     }//GEN-LAST:event_EntrarMouseExited
 
-    private void Entrar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entrar1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Entrar1MouseEntered
+    private void CreditosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreditosMouseEntered
+        Entrar.setBackground(Color.white);
+        Entrar.setForeground(Color.black);
+    }//GEN-LAST:event_CreditosMouseEntered
 
-    private void Entrar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entrar1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Entrar1MouseExited
+    private void CreditosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreditosMouseExited
+        Entrar.setBackground(new Color(0, 153, 204));
+        Entrar.setForeground(Color.white);
+    }//GEN-LAST:event_CreditosMouseExited
+
+    private void SalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirMouseEntered
+        Entrar.setBackground(Color.white);
+        Entrar.setForeground(Color.black);
+    }//GEN-LAST:event_SalirMouseEntered
+
+    private void SalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirMouseExited
+        Entrar.setBackground(new Color(0, 153, 204));
+        Entrar.setForeground(Color.white);
+    }//GEN-LAST:event_SalirMouseExited
 
     /**
      * @param args the command line arguments
@@ -169,9 +201,10 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Creditos;
     private javax.swing.JButton Entrar;
-    private javax.swing.JButton Entrar1;
     private javax.swing.JLabel Fondo;
+    private javax.swing.JButton Salir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
