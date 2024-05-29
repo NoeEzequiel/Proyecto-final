@@ -15,11 +15,14 @@ public class Inicio extends javax.swing.JFrame {
     /**
      * Creates new form Inicio
      */
+            Ingreso in = new Ingreso();
+
     public Inicio() {
         initComponents();
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/main/resources/Imagenes/veterinario.png"));
         Imagenes.imagenEscalada("FondoInicio.png", Fondo);
         this.setCursor(Imagenes.Cursor("cursorClick.png"));
+        this.setLocationRelativeTo(null);
 
     }
 
@@ -60,6 +63,11 @@ public class Inicio extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 EntrarMouseExited(evt);
+            }
+        });
+        Entrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntrarActionPerformed(evt);
             }
         });
 
@@ -164,6 +172,11 @@ public class Inicio extends javax.swing.JFrame {
         Entrar.setBackground(new Color(0, 153, 204));
         Entrar.setForeground(Color.white);
     }//GEN-LAST:event_SalirMouseExited
+
+    private void EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarActionPerformed
+        this.dispose();
+        in.setVisible(true);
+    }//GEN-LAST:event_EntrarActionPerformed
 
     /**
      * @param args the command line arguments
