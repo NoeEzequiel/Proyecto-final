@@ -5,7 +5,6 @@
 package Inicio;
 
 import java.awt.*;
-import javax.swing.JFrame;
 
 /**
  *
@@ -18,9 +17,13 @@ public class Ingreso extends javax.swing.JFrame {
      */
     public Ingreso() {
         initComponents();
+        
+        //establece las imagenes tanto de el fondo, el icono y el cursor
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/main/resources/Imagenes/veterinario.png"));
         Imagenes.imagenEscalada("FondoInicio.png", Fondo);
         this.setCursor(Imagenes.Cursor("cursorClick.png"));
+        
+        //establece las pocisiones predeterminadas de la ventana y sus subventanas
         this.setLocationRelativeTo(null);
         Ingresar.setLocationRelativeTo(this.jPanel1);
 
@@ -60,12 +63,13 @@ public class Ingreso extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
+        jPanel2.setPreferredSize(new java.awt.Dimension(310, 252));
 
-        jButton1.setBackground(new java.awt.Color(102, 51, 0));
-        jButton1.setFont(new java.awt.Font("Rod", 3, 11)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 153, 255));
+        jButton1.setFont(new java.awt.Font("Arial Narrow", 3, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("entrar");
-        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 153, 255)));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +77,8 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
 
-        Cerrar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Cerrar.setFont(new java.awt.Font("Rockwell Condensed", 0, 36)); // NOI18N
+        Cerrar.setForeground(new java.awt.Color(0, 102, 204));
         Cerrar.setText("X");
         Cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -81,12 +86,14 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Serif", 2, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 153, 204));
         jLabel4.setText("Contraseña");
 
         txtusuario.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 11)); // NOI18N
         txtusuario.setForeground(java.awt.Color.lightGray);
         txtusuario.setText("nombre de usuario");
-        txtusuario.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 51, 0)));
+        txtusuario.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 102, 204)));
         txtusuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtusuarioFocusGained(evt);
@@ -104,7 +111,7 @@ public class Ingreso extends javax.swing.JFrame {
         txtcontraseña.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 12)); // NOI18N
         txtcontraseña.setForeground(java.awt.Color.lightGray);
         txtcontraseña.setText("jPasswordField1");
-        txtcontraseña.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 51, 0)));
+        txtcontraseña.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 102, 204)));
         txtcontraseña.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtcontraseñaFocusGained(evt);
@@ -119,9 +126,12 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 153));
         jLabel2.setText("Ingrese sus datos");
 
+        jLabel3.setFont(new java.awt.Font("Serif", 2, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 153, 204));
         jLabel3.setText("Usuario");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -129,7 +139,7 @@ public class Ingreso extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -185,7 +195,7 @@ public class Ingreso extends javax.swing.JFrame {
             IngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(IngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
