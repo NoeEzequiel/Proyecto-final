@@ -55,7 +55,7 @@ public class Inicio extends javax.swing.JFrame {
         Entrar.setForeground(new java.awt.Color(255, 255, 255));
         Entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pata.png"))); // NOI18N
         Entrar.setText("Entrar");
-        Entrar.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Bienvenido", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        Entrar.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Bienvenido", 2, 2, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         Entrar.setCursor(Imagenes.Cursor("cursorAcercar.png"));
         Entrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -76,7 +76,7 @@ public class Inicio extends javax.swing.JFrame {
         Creditos.setForeground(new java.awt.Color(255, 255, 255));
         Creditos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pata.png"))); // NOI18N
         Creditos.setText("Creditos");
-        Creditos.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Bienvenido", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        Creditos.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Bienvenido", 2, 2, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         Creditos.setCursor(Imagenes.Cursor("cursorAcercar.png"));
         Creditos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -92,7 +92,7 @@ public class Inicio extends javax.swing.JFrame {
         Salir.setForeground(new java.awt.Color(255, 255, 255));
         Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pata.png"))); // NOI18N
         Salir.setText("Salir");
-        Salir.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Bienvenido", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        Salir.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Bienvenido", 2, 2, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         Salir.setCursor(Imagenes.Cursor("cursorAcercar.png"));
         Salir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
