@@ -5,6 +5,13 @@
 package Inicio;
 
 import java.awt.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,12 +24,12 @@ public class Ingreso extends javax.swing.JFrame {
      */
     public Ingreso() {
         initComponents();
-        
+
         //establece las imagenes tanto de el fondo, el icono y el cursor
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/main/resources/Imagenes/veterinario.png"));
         Imagenes.imagenEscalada("FondoInicio.png", Fondo);
         this.setCursor(Imagenes.Cursor("cursorClick.png"));
-        
+
         //establece las pocisiones predeterminadas de la ventana y sus subventanas
         this.setLocationRelativeTo(null);
         Ingresar.setLocationRelativeTo(this.jPanel1);
@@ -40,7 +47,7 @@ public class Ingreso extends javax.swing.JFrame {
 
         Ingresar = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        Verificar = new javax.swing.JButton();
         Cerrar = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtusuario = new javax.swing.JTextField();
@@ -63,17 +70,17 @@ public class Ingreso extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
-        jPanel2.setPreferredSize(new java.awt.Dimension(310, 252));
+        jPanel2.setPreferredSize(new java.awt.Dimension(310, 237));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 255));
-        jButton1.setFont(new java.awt.Font("Arial Narrow", 3, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("entrar");
-        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 153, 255)));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Verificar.setBackground(new java.awt.Color(0, 153, 255));
+        Verificar.setFont(new java.awt.Font("Arial Narrow", 3, 12)); // NOI18N
+        Verificar.setForeground(new java.awt.Color(255, 255, 255));
+        Verificar.setText("Verificar");
+        Verificar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 153, 255)));
+        Verificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Verificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                VerificarActionPerformed(evt);
             }
         });
 
@@ -100,6 +107,11 @@ public class Ingreso extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtusuarioFocusLost(evt);
+            }
+        });
+        txtusuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusuarioActionPerformed(evt);
             }
         });
 
@@ -156,7 +168,7 @@ public class Ingreso extends javax.swing.JFrame {
                             .addComponent(txtcontraseña)
                             .addComponent(txtusuario)
                             .addComponent(jLabel3)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Verificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(88, 88, 88))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -179,7 +191,7 @@ public class Ingreso extends javax.swing.JFrame {
                     .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JLcontraseña))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Verificar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -305,10 +317,19 @@ public class Ingreso extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_EntrarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void VerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerificarActionPerformed
+        // Verificar si el campo de contraseña está vacío
+        if (txtcontraseña == null || txtcontraseña.getPassword() == null) {
+            JOptionPane.showMessageDialog(null, "El campo de contraseña no puede estar vacío");
+        } else if (txtusuario == null || txtusuario.getText()== null) {
+            // Verificar si el campo de usuario está vacío
+            JOptionPane.showMessageDialog(null, "El campo de usuario no puede estar vacío");
+        } else {
+            // Si ambos campos no están vacíos, proceder a verificar el usuario
+            verificarUsuario();
+        }
 
-
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_VerificarActionPerformed
 
     private void txtusuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtusuarioFocusGained
         txtusuario.setForeground(Color.black);
@@ -361,9 +382,49 @@ public class Ingreso extends javax.swing.JFrame {
         Ingresar.dispose();
     }//GEN-LAST:event_CerrarMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void txtusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtusuarioActionPerformed
+
+    public void verificarUsuario() {
+
+        File file = new File("src/main/resources/Archivos/RegistroVeterinarios.txt");
+        boolean usuarioEncontrado = false;
+        boolean contrasenaEncontrada = false;
+        String usuario = txtusuario.getText();
+        String contrasena = new String(txtcontraseña.getPassword());
+
+        try (BufferedReader bR = new BufferedReader(new FileReader(file))) {
+            String lectura;
+            while ((lectura = bR.readLine()) != null) {
+                if (lectura.contains(usuario)) {
+                    usuarioEncontrado = true;
+                }
+                if (lectura.contains(contrasena)) {
+                    contrasenaEncontrada = true;
+                }
+                if (usuarioEncontrado && contrasenaEncontrada) {
+                    break;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: Archivo no encontrado - " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error: Problema de I/O - " + e.getMessage());
+        }
+
+        if (usuarioEncontrado) {
+            JOptionPane.showMessageDialog(null, "Usuario correcto");
+            if (contrasenaEncontrada) {
+                JOptionPane.showMessageDialog(null, "Contraseña correcta");
+            } else {
+                JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuario incorrecto");
+        }
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -405,7 +466,7 @@ public class Ingreso extends javax.swing.JFrame {
     private javax.swing.JDialog Ingresar;
     private javax.swing.JLabel JLcontraseña;
     private javax.swing.JLabel JLusuario;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Verificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
